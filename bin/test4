@@ -1,0 +1,37 @@
+#!/usr/bin/php
+<?php
+ require_once(dirname(__FILE__)."/../inc/config.inc.php");
+ require_once(dirname(__FILE__)."/../libs/autoload.lib.php");
+
+ if ($argc != 3)
+   die($argv[0]." <hostname> <domainname>\n");
+
+ $m = mysqlCM::getInstance();
+ if ($m->connect()) {
+   die("Error with SQL db: ".$m->getError()."\n");
+ }
+
+ $device = new Device();
+ $device->hostname = $argv[1];
+ $device->domain = $argv[2];
+ $device->https = 0;
+ $device->port = 80;
+ $device->o_buser = new User();
+ $device->o_buser->type = "B";
+ $device->o_buser->username = "admin";
+ $device->o_buser->password = "popol";
+
+ if ($device->loadFromXML() == -1) {
+   echo "[!] Failed to load from XML\n";
+ } else {
+   if ($device->loader->dataArray) {
+     echo "[-] Device type: ".$device->o_version->flavour."\n";
+     echo "[-] Version detected: ".$device->o_version->version."\n";
+     echo "[-] Device configuration loaded succesfully\n";
+   } else {
+     if ($device->loader->dataXML) {
+       echo "[-] Error, unable to convert XML to array";
+     }
+   }
+ }
+?>

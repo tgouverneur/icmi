@@ -1,0 +1,18 @@
+Reqs from pfsense forum:
+------------------------
+
+1. Manage all aspects of each pfSense firewall from central location (Like m0n0wall CMI).
+2. A heads up of all pfsense systems with green light if able to communicate/Red if not with central management device.
+   Possibly in a tree like format where the icon would turn red or a list format.
+   Red would be based on rules..ie connection from CMI down, CPU high, low memory, point to point tunnel down, unusually high traffic for entended period of time based on rules.
+3. Email notification (SMS notification if possible) when a rule has either a threshold passed or unable to perform the task requested in the rule..ie Ping
+4. Connection from CMI to remote systems must be secure (Probably doesn't need to be mentioned but....)
+5. Ability to schedule automatic backups and perform manual backups. 
+   Possibly better than automatic is have the system check the file and if it is newer to back it up.
+6. Logging of systems to a web based log like in pfSense with ability to filter based on firewall and type of events and export.  (I really like the idea of going to one location for all information rather than having to constantly switch)
+7. Ability to send log info to syslog for further diagnosis.
+8. Should really act as an appliance and not as a package....unless it just means using pfSense with just that package.
+9. I really think a one stop shop solution would be best (All services provided within the same box) since this unit will not be acting as a firewall. Prefered but not required.
+10. Would be great but not required is mobileweb..ie Iphone or PocketPC or WAP web like interface for remote management via Phone.
+11. If possible to use an open type technology which would allow people to create new bounties allowing the integration of other devices like switches routers using snmp...etc
+12. If possible...option to push rules out to multiple devices at the same time...IE...

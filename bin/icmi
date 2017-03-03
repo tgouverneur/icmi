@@ -1,0 +1,77 @@
+#!/usr/bin/php
+<?php
+ require_once(dirname(__FILE__)."/../inc/config.inc.php");
+ require_once(dirname(__FILE__)."/../libs/autoload.lib.php");
+ require_once(dirname(__FILE__)."/../libs/cli.lib.php");
+ 
+ if ($argc == 1) {
+   echo $argv[0].": No arg given\n";
+   echo $argv[0].": -h to see usage\n";
+   exit(1);
+ }
+
+ $shortopts = "";
+ $shortopts .= "a:";
+ $shortopts .= "i:";
+ $shortopts .= "n:";
+ $shortopts .= "d:";
+ $shortopts .= "h";
+
+ $options = getopt($shortopts);
+// var_dump($options);
+ 
+ /* print help */
+
+ if (isset($options['h'])) {
+   echo $argv[0]." syntax:\n";
+   echo "\t-a,\n";
+   echo "\t\tAction: list, del, mod, set, import, updatexml.\n";
+   echo "\t\t  updatexml -n <hostname> -d <domain>\n\n";
+   echo "\t-i,\n";
+   echo "\t\tItem: device, version\n\n"; 
+   echo "\t-h,\n";
+   echo "\t\tThis help\n";
+   exit(0);
+ }
+
+ /* check mandatory options */
+ if (!isset($options['a']) || !isset($options['i'])) {
+   echo $argv[0]." no -a and -i option found.\n";
+   echo $argv[0]." see -h for syntax details\n";
+   exit(1);
+ }
+
+ switch ($options['a']) {
+   case "list":
+     listItem($options['i']);
+   break;
+   case "add":
+     echo $argv[0]." Add function not yet implemented...\n";
+   break;
+   case "del":
+     echo $argv[0]." Del function not yet implemented...\n";
+   break;
+   case "set":
+     echo $argv[0]." Set function not yet implemented...\n";
+   break;
+   case "import":
+     echo $argv[0]." Import function not yet implemented...\n";
+   break;
+   case "updatexml":
+    if ($options['i'] != "device") {
+      echo $argv[0]." wrong -i value\n";
+      exit(1);
+    }
+    if (!isset($options['n']) || !isset($options['d'])) {
+      echo $argv[0]." no hostname or domain specified\n";
+    } else {
+      updateXML($options['n'], $options['d']);
+    }
+   break;
+   default:
+     echo $argv[0]." Unknown option for -a switch...\n";
+     exit(1);
+   break;
+ }
+
+?>

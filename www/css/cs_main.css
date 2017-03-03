@@ -1,0 +1,200 @@
+/* Generic definition */
+
+body {
+	font-family: Helvetica, sans-serif;
+	font-style: normal;
+	font-size: small;
+}
+
+/* Text and titles */
+
+.red {
+        font-weight: bold;
+        color: #8B0000;
+}
+
+h1 {
+	font-size: 60px;
+	font-weight: bold;
+	color: #8B0000;
+	font-family: Courier;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+p {
+
+}
+
+/* Links */
+
+A:link {
+	color: #8B0000;
+	font-style: normal;
+	text-decoration: none;
+}
+
+A:visited {
+	color: #8B4513;
+	font-style: normal;
+	text-decoration: none;
+}
+
+A:active {
+
+}
+
+A:hover {
+	color: Maroon;
+	font-style: normal;
+	text-decoration: none;
+}
+
+
+/* Boxes */
+
+#header {
+	width: 85%;
+	height: 65px;
+	border-bottom-style: groove;
+	border-bottom-width: 1px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+#footer {
+	width: 60%;
+        border-top-style: groove;
+        border-top-width: 1px;
+        margin: 0px auto;
+	margin-top: 20px;
+	padding-top: 0px;
+}
+
+#content {
+	width: 84%;
+	margin: 0px auto;
+}
+
+#menu {
+	width: 16%;
+	float: left;
+	border-right-style: ridge;
+	border-right-width: 1px;
+}
+
+#page {
+	margin-left: 20%;
+	width: 79%;
+}
+
+/* Title */
+
+#title {
+        font-size: 60px;
+        font-weight: bold;
+        color: #8B0000;
+        font-family: Courier;
+	float: left;
+}
+
+#legend {
+	font-size: small;
+	color: #696969;
+	float: right;
+	margin-top: 45px;
+}
+
+/* Copyright notice */
+
+#copyright {
+        text-align: center;
+        font-size: small;
+        color: #696969;
+}
+
+/* STANDARD */
+
+button:hover, .blocklist a:hover{
+    background-color:#dff4ff;
+    border:1px solid #c2e1ef;
+    color:#336699;
+}
+.blocklist a:active{
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+}
+
+/* POSITIVE */
+
+button.positive, .blocklist a.positive{
+    color:#529214;
+}
+
+.blocklist a.positive:hover, button.positive:hover{
+    background-color:#E6EFC2;
+    border:1px solid #C6D880;
+    color:#529214;
+}
+
+.blocklist a.positive:active{
+    background-color:#529214;
+    border:1px solid #529214;
+    color:#fff;
+}
+
+/* NEGATIVE */
+
+.blocklist a.negative, button.negative{
+    color:#d12f19;
+}
+
+.blocklist a.negative:hover, button.negative:hover{
+    background:#fbe3e4;
+    border:1px solid #fbc2c4;
+    color:#d12f19;
+}
+
+.blocklist a.negative:active{
+    background-color:#d12f19;
+    border:1px solid #d12f19;
+    color:#fff;
+}
+
+#formFields {
+	float: left;
+	text-align: left;
+}
+
+#formFields input, select, textarea {
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	border:1px solid;
+}
+
+#formFields input text[type] {
+	width: 150px;
+}
+
+#formFields input checkbox[type] {
+	border: 1px solid black;
+}
+
+#formFields label {
+        text-align: left;
+        float: left;
+        width: 100px;
+        padding-left: 25px;
+        font-weight: bold;
+}
+
